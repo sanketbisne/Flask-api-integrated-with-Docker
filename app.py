@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 app = Flask(__name__)
 
@@ -8,5 +8,19 @@ def hello():
     return "Hello World!"
 
 
+@app.route("/about")
+def aboutsection():
+    return "this is about section"
+
+
+@app.route("/resume")
+def myresume():
+    data = {
+        'name': 'sanketbisne',
+        'email': 'sanketbisne@gmail.com'
+    }
+    return jsonify(data)
+
+
 if (__name__ == "__main__"):
-    app.run(5000)
+    app.run(debug=True)
