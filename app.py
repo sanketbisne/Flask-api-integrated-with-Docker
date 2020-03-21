@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
@@ -13,7 +13,6 @@ def aboutsection():
     return "this is about section"
 
 
-@app.route("/resume")
 def myresume():
     data = {
         'name': 'sanketbisne',
@@ -22,5 +21,20 @@ def myresume():
     return jsonify(data)
 
 
+@app.route('/add_two_numbers', methods=["POST"])
+def add_two_nums():
+    dataDictt = request.get_json()
+    x = dataDictt["x"]
+    y = dataDictt["y"]
+    z = x+y
+
+    retJSON = {
+        "z": z
+    }
+    return jsonify(retJSON), 200
+# 200 = Success
+# 500 = NOT FOUND
+
+
 if (__name__ == "__main__"):
-    app.run(debug=True)
+    app.run()
