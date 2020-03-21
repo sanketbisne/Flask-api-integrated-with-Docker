@@ -13,11 +13,18 @@ def aboutsection():
     return "this is about section"
 
 
+@app.route("/best")
 def myresume():
-    data = {
+    data = [{
         'name': 'sanketbisne',
-        'email': 'sanketbisne@gmail.com'
-    }
+        'div': 'A,',
+        'email': 'sanketbisne@gmail.com',
+        'arr': [1, 2, 1, 45, 56]
+    },
+        {
+        'name': 'netfix',
+        'cloud': 'AWS'
+    }]
     return jsonify(data)
 
 
