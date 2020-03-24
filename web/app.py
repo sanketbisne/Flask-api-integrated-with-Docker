@@ -23,7 +23,9 @@ def myresume():
     },
         {
         'name': 'netfix',
-        'cloud': 'AWS'
+        'cloud': 'AWS',
+        'SERVICES ': 'sagemaker',
+        'music': 'spotify'
     }]
     return jsonify(data)
 
