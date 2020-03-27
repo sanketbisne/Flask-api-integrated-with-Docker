@@ -4,5 +4,8 @@ integrated with docker
 added 5 functions
 4 of ariths
 1 of number of clicks on any website
+
+
+DOCKER-
 -sudo docker-compose build
 sudo docker-compose up
